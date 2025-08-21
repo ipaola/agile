@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consultoría Agile — Impulsa tu transformación</title>
+  <meta name="description" content="Servicios de consultoría Agile: evaluación, formación, coaching de equipos y escalado.">
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --panel:#111827;     /* gray-900 */
+      --muted:#94a3b8;     /* slate-400 */
+      --text:#e5e7eb;      /* gray-200 */
+      --brand:#22d3ee;     /* cyan-400 */
+      --accent:#38bdf8;    /* sky-400 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0b1220,#0f172a);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,Arial,sans-serif;line-height:1.6}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    .nav{display:flex;gap:16px;align-items:center;justify-content:space-between;padding:12px 0}
+    .nav .logo{font-weight:800;letter-spacing:.4px}
+    .badge{display:inline-block;padding:4px 10px;border:1px solid #1f2937;border-radius:999px;background:#0b1324;color:var(--muted);font-size:.85rem}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:40px 0}
+    .hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 12px}
+    .hero p{color:var(--muted);margin:0 0 20px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{background:linear-gradient(135deg,var(--brand),var(--accent));color:#00111a;border:none;padding:12px 18px;border-radius:14px;font-weight:700;cursor:pointer;box-shadow:0 10px 30px rgba(34,211,238,.25)}
+    .btn.secondary{background:#0b1324;color:var(--text);border:1px solid #1f2937;font-weight:600}
+    .card{background:rgba(17,24,39,.7);border:1px solid #1f2937;border-radius:16px;padding:18px;backdrop-filter: blur(6px)}
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
+    .kpi{background:#0b1324;border:1px solid #1f2937;border-radius:14px;padding:16px;text-align:center}
+    .kpi h3{margin:0;font-size:28px;background:linear-gradient(135deg,var(--brand),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .section{padding:26px 0}
+    h2{font-size:clamp(22px,3.2vw,30px);margin:0 0 10px}
+    .muted{color:var(--muted)}
+    ul{padding-left:18px;margin:10px 0}
+    li{margin:6px 0}
+    .testi{font-style:italic;color:#cbd5e1}
+    .footer{padding:40px 0;color:#94a3b8;border-top:1px solid #1f2937;margin-top:24px}
+    .pill{display:inline-block;border:1px solid #1f2937;background:#0b1324;padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-size:.9rem}
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr}
+      .grid.cols-2{grid-template-columns:1fr}
+      .kpis{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <div class="logo">🚀 Agile Consulting</div>
+      <div class="badge">Disponible para LATAM & EU</div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <h1>Impulsa tu transformación Agile<br>con resultados medibles</h1>
+        <p>Te ayudo a acelerar la entrega de valor, mejorar la predictibilidad y aumentar la satisfacción del cliente mediante prácticas Agile y Lean adaptadas a tu contexto.</p>
+        <div class="cta">
+          <a class="btn" href="#contacto">Agenda una llamada gratis</a>
+          <a class="btn secondary" href="#servicios">Ver servicios</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><h3>2–4x</h3><div class="muted">Time‑to‑Market</div></div>
+          <div class="kpi"><h3>+35%</h3><div class="muted">Satisfacción del equipo</div></div>
+          <div class="kpi"><h3>−25%</h3><div class="muted">Retrabajo/defectos</div></div>
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-top:6px">Diagnóstico Agile Express</h3>
+        <p class="muted">En 10 días obtén un mapa claro de cuellos de botella, métricas base y plan de mejoras priorizado.</p>
+        <ul>
+          <li>Entrevistas y mapeo de flujo de valor</li>
+          <li>Métricas: lead time, throughput, WIP</li>
+          <li>Roadmap de mejoras por impacto</li>
+        </ul>
+        <a class="btn" href="#contacto">Solicitar diagnóstico</a>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <h2>Servicios</h2>
+      <p class="muted">Paquetes modulares que combinan formación, coaching y acompañamiento operativo.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Formación Agile</h3>
+          <ul>
+            <li>Scrum, Kanban, OKRs y Product Discovery</li>
+            <li>Workshops prácticos con casos reales</li>
+            <li>Kits reutilizables y plantillas</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Coaching de Equipos</h3>
+          <ul>
+            <li>Diseño de tableros y políticas WIP</li>
+            <li>Mejora de ceremonias y métricas</li>
+            <li>Shadowing + retroacciones</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Escalado & PMO Agile</h3>
+          <ul>
+            <li>Portfolio Kanban y governance ligera</li>
+            <li>Value stream management</li>
+            <li>OKRs & Roadmaps trimestrales</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Cómo trabajamos</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>01. Descubrimiento</h3>
+          <p class="muted">Entendemos objetivos, contexto y restricciones. Definimos métricas de éxito.</p>
+        </div>
+        <div class="card">
+          <h3>02. Diseño</h3>
+          <p class="muted">Diseñamos un enfoque iterativo con quick wins y entregables por sprint.</p>
+        </div>
+        <div class="card">
+          <h3>03. Acompañamiento</h3>
+          <p class="muted">Coaching semanal, soporte en ceremonias y revisión de métricas.</p>
+        </div>
+        <div class="card">
+          <h3>04. Escala & Handoff</h3>
+          <p class="muted">Estandarizamos prácticas, formamos champions y dejamos todo documentado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Testimonios</h2>
+      <div class="grid cols-2">
+        <div class="card testi">“En 3 meses mejoramos la previsibilidad y eliminamos el caos de prioridades.” — CTO, Fintech</div>
+        <div class="card testi">“Las ceremonias por fin agregan valor y el equipo está motivado.” — Head of Product</div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <p class="muted">¿Tienes un reto? Conversemos 20 minutos.</p>
+      <div class="card">
+        <p><strong>Email:</strong> <a href="mailto:contacto@tusitio.com">contacto@tusitio.com</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/521234567890" target="_blank" rel="noopener">+52 123 456 7890</a></p>
+        <p>
+          <span class="pill">Discovery call</span>
+          <span class="pill">Diagnóstico Express</span>
+          <span class="pill">OKRs trimestrales</span>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Agile Consulting — Hecho con GitHub Pages</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
