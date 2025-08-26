@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="es" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Catálogo de Servicios Ágiles | Tienda Moderna</title>
+  <meta name="description" content="Catálogo profesional y moderno de servicios ágiles: paquetes individuales, programas por madurez (principiante, intermedio, avanzado), indicadores de éxito y precios." />
+  <meta name="author" content="Tu Marca" />
+  <meta name="theme-color" content="#0b1020" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Servicios Ágiles" />
+  <meta property="og:description" content="Servicios y programas de agilidad con KPIs, entregables y precios claros." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dummyimage.com/1200x630/0b1020/ffffff&text=Catalogo+Agil" />
+
+  <!-- Fuente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* =====================
+       Diseño moderno (CSS)
+       ===================== */
+    :root {
+      --bg:#0b1020;            /* fondo oscuro elegante */
+      --bg-2:#0a0f1f;
+      --panel:#111726;         /* tarjetas */
+      --panel-2:#0e1526;       /* alternas */
+      --brand:#6ae3ff;         /* acento cian */
+      --brand-2:#8b5cf6;       /* acento violeta */
+      --text:#e6ebff;          /* texto principal */
+      --muted:#a6b0d6;         /* texto secundario */
+      --ok:#22c55e;            /* verde */
+      --warn:#f59e0b;          /* ámbar */
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
+      --ring:0 0 0 2px rgba(106,227,255,.35);
+    }
+    [data-theme="light"]{
+      --bg:#f6f7fb; --bg-2:#ffffff; --panel:#ffffff; --panel-2:#f3f4f8; --text:#101225; --muted:#4b5478; --shadow:0 10px 30px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:radial-gradient(1200px 300px at 15% -10%, rgba(106,227,255,.06), transparent), linear-gradient(180deg,var(--bg),var(--bg-2));color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    a{color:var(--brand);text-decoration:none}
+    .container{max-width:1200px;margin:auto;padding:24px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:rgba(13,18,38,.6);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+    [data-theme="light"] header{background:rgba(255,255,255,.7);border-color:rgba(0,0,0,.06)}
+    .nav{display:flex;gap:18px;align-items:center;justify-content:space-between}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:.5px}
+    .logo .dot{width:12px;height:12px;border-radius:50%;background:conic-gradient(from 180deg,var(--brand),var(--brand-2));box-shadow:0 0 0 4px rgba(139,92,246,.15)}
+    .nav a{color:var(--muted);font-weight:600}
+    .nav a:hover{color:var(--text)}
+    .cta-btn{background:linear-gradient(135deg,var(--brand),var(--brand-2));color:#0a0f1f;border:none;padding:10px 16px;border-radius:999px;font-weight:800;box-shadow:var(--shadow);cursor:pointer}
+    .ghost-btn{background:transparent;border:1px solid rgba(255,255,255,.18);padding:10px 14px;color:var(--text);border-radius:999px;font-weight:700}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:42px 0}
+    .hero h1{font-size:clamp(28px,5vw,52px);line-height:1.05;margin:0 0 10px}
+    .hero p{color:var(--muted);font-size:clamp(14px,2vw,18px)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));padding:22px;border-radius:var(--radius);box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.08)}
+    [data-theme="light"] .card{border-color:rgba(0,0,0,.06)}
+
+    .grid{display:grid;gap:20px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-4{grid-template-columns:repeat(4,1fr)}
+    @media (max-width:1000px){.hero{grid-template-columns:1fr}.grid.cols-3,.grid.cols-4{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:680px){.grid.cols-3,.grid.cols-4,.grid.cols-2{grid-template-columns:1fr}}
+
+    .section{padding:48px 0}
+    .section.alt{background:linear-gradient(180deg,var(--panel-2),var(--bg))}
+    .section h2{font-size:clamp(22px,3.4vw,36px);margin:0 0 6px}
+    .section p.lead{margin:0 0 24px;color:var(--muted)}
+
+    .tag{display:inline-flex;align-items:center;gap:6px;background:rgba(106,227,255,.12);border:1px solid rgba(106,227,255,.35);color:#0de5ff;padding:4px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    [data-theme="light"] .tag{color:#0b6b77}
+
+    .badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:8px;font-size:12px;font-weight:800}
+    .badge.ok{background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.4);color:#22c55e}
+    .badge.warn{background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.4);color:#f59e0b}
+
+    .price{font-size:22px;font-weight:900}
+    .pill{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);font-size:12px;color:var(--muted)}
+
+    .list{padding-left:18px;color:var(--muted)}
+    .list li{margin:6px 0}
+
+    table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    th,td{padding:14px;border-bottom:1px solid rgba(255,255,255,.06);vertical-align:top}
+    th{background:rgba(255,255,255,.04);text-align:left}
+    tr:last-child td{border-bottom:none}
+
+    footer{padding:36px 0;color:var(--muted);border-top:1px solid rgba(255,255,255,.06)}
+    .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:20px}
+    @media (max-width:860px){.foot-grid{grid-template-columns:1fr}}
+
+    .floating-cta{position:fixed;right:16px;bottom:16px;display:flex;gap:10px;align-items:center;background:linear-gradient(135deg,var(--panel),#0f1626);border:1px solid rgba(255,255,255,.08);padding:10px 14px;border-radius:999px;box-shadow:var(--shadow)}
+    .floating-cta button{background:linear-gradient(135deg,var(--brand),var(--brand-2));border:none;color:#0b1020;font-weight:900;padding:8px 14px;border-radius:999px;cursor:pointer}
+
+    .kpis{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+    .kpis .pill{background:rgba(139,92,246,.12);border-color:rgba(139,92,246,.35);color:#c4b5fd}
+
+    .input{width:100%;margin-top:6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;color:var(--text);padding:10px 12px;outline:none}
+    .input:focus{box-shadow:var(--ring)}
+
+    .theme-toggle{display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.18);padding:8px 12px;border-radius:999px;cursor:pointer}
+
+    /* animaciones sutiles */
+    .fade-in{opacity:0;transform:translateY(10px);animation:fade .6s ease-out forwards}
+    @keyframes fade{to{opacity:1;transform:none}}
+  </style>
+
+  <!-- JSON-LD (Organization + Offers) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tu Marca",
+    "url": "https://tumarca.github.io/",
+    "logo": "https://dummyimage.com/512x512/0b1020/ffffff&text=AGIL",
+    "sameAs": ["https://www.linkedin.com/company/tumarca"],
+    "makesOffer": [
+      {"@type":"Offer","name":"Sprint 360°","price":"1200","priceCurrency":"USD"},
+      {"@type":"Offer","name":"OKR Booster","price":"900","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Value Stream Mapping","price":"1500","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Backlog Power-Up","price":"600","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Discovery Express","price":"2000","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Retrospectiva Creativa","price":"250","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Agile Metrics Pack","price":"1000","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Agile Leadership Coaching","price":"400","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Team Kick-Off","price":"700","priceCurrency":"USD"},
+      {"@type":"Offer","name":"Agile Tools Setup","price":"500","priceCurrency":"USD"}
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="fade-in" style="animation-delay:.05s">
+    <div class="container nav">
+      <div class="logo"><span class="dot"></span> Catálogo Ágil</div>
+      <nav style="display:flex;gap:14px;align-items:center;flex-wrap:wrap">
+        <a href="#servicios">Servicios</a>
+        <a href="#programas">Programas</a>
+        <a href="#indicadores">Indicadores</a>
+        <button id="themeBtn" class="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">
+          <span>🌙</span><span id="themeText">Oscuro</span>
+        </button>
+        <a href="#contacto" class="cta-btn">Contactar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="container hero fade-in" style="animation-delay:.1s">
+    <div>
+      <h1>Servicios y Programas de <span style="background:linear-gradient(135deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">Agilidad Empresarial</span></h1>
+      <p>Paquetes paquetizados, indicadores de éxito y precios competitivos. Diseñado para niveles <b>Principiante</b>, <b>Intermedio</b> y <b>Avanzado</b>.</p>
+      <div class="kpis">
+        <span class="pill">Lead Time</span>
+        <span class="pill">Cycle Time</span>
+        <span class="pill">Throughput</span>
+        <span class="pill">Predictibilidad</span>
+        <span class="pill">NPS / CSAT</span>
+        <span class="pill">Madurez Ágil</span>
+      </div>
+      <div style="margin-top:14px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta-btn" href="#servicios">Ver Servicios</a>
+        <a class="ghost-btn" href="#programas">Ver Programas</a>
+      </div>
+    </div>
+    <div class="card">
+      <div class="tag">Nuevo • 2025</div>
+      <h3 style="margin-top:12px">¿Qué obtienes?</h3>
+      <ul class="list">
+        <li>10 servicios individuales "a la carta".</li>
+        <li>3 programas por nivel de madurez (Starter, Growth, Scale).</li>
+        <li>Entregables y KPIs definidos en cada paquete.</li>
+        <li>Modalidad remota o presencial.</li>
+      </ul>
+      <div style="margin-top:10px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="cta-btn" href="#contacto">Solicitar propuesta</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="section alt fade-in" style="animation-delay:.2s">
+    <div class="container">
+      <h2>Servicios Individuales</h2>
+      <p class="lead">Paquetes específicos con alcances cerrados, entregables claros e <b>indicadores de éxito</b>.</p>
+
+      <div class="grid cols-3">
+        <!-- 1 Sprint 360° -->
+        <article class="card">
+          <div class="tag">Scrum Mastering</div>
+          <h3>Sprint 360°</h3>
+          <p class="lead">Acompañamiento completo de un sprint con todas las ceremonias.</p>
+          <ul class="list">
+            <li>Planning, Daily, Refinement, Review, Retrospectiva.</li>
+            <li>Gestión de impedimentos y mejora continua.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">% historias completadas</span>
+            <span class="pill">Participación</span>
+            <span class="pill">Impedimentos resueltos</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">1.200 USD / sprint</span>
+            <button class="cta-btn" onclick="addToQuote('Sprint 360°')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 2 OKR Booster -->
+        <article class="card">
+          <div class="tag">Estrategia</div>
+          <h3>OKR Booster</h3>
+          <p class="lead">Definición de objetivos estratégicos y medibles.</p>
+          <ul class="list">
+            <li>2 workshops + template de seguimiento.</li>
+            <li>Alineación backlog ↔ OKRs.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">% backlog alineado</span>
+            <span class="pill">Cumplimiento KR</span>
+            <span class="pill"># métricas accionables</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">900 USD / taller</span>
+            <button class="cta-btn" onclick="addToQuote('OKR Booster')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 3 VSM -->
+        <article class="card">
+          <div class="tag">Service Delivery</div>
+          <h3>Value Stream Mapping</h3>
+          <p class="lead">Optimización del flujo de valor y reducción de cuellos de botella.</p>
+          <ul class="list">
+            <li>Mapa actual y mapa futuro.</li>
+            <li>Plan de mejora basado en métricas.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Lead Time ↓</span>
+            <span class="pill">Handoffs ↓</span>
+            <span class="pill">Bottlenecks eliminados</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">1.500 USD / flujo</span>
+            <button class="cta-btn" onclick="addToQuote('Value Stream Mapping')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 4 Backlog Power-Up -->
+        <article class="card">
+          <div class="tag">Producto</div>
+          <h3>Backlog Power-Up</h3>
+          <p class="lead">Organización y priorización del backlog con técnicas avanzadas.</p>
+          <ul class="list">
+            <li>Prioridad por valor (MoSCoW, WSJF, etc.).</li>
+            <li>Definition of Ready + refinamiento.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">% historias con DoR</span>
+            <span class="pill">Validación con stakeholders</span>
+            <span class="pill">Cambios no planificados ↓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">600 USD / backlog</span>
+            <button class="cta-btn" onclick="addToQuote('Backlog Power-Up')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 5 Discovery Express -->
+        <article class="card">
+          <div class="tag">Discovery</div>
+          <h3>Discovery Express</h3>
+          <p class="lead">De la idea al MVP con visión clara y roadmap inicial.</p>
+          <ul class="list">
+            <li>Vision Board, personas, hipótesis, MVP canvas.</li>
+            <li>Roadmap 3 meses.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill"># hipótesis validadas</span>
+            <span class="pill">% features del MVP</span>
+            <span class="pill">Claridad de visión</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">2.000 USD / producto</span>
+            <button class="cta-btn" onclick="addToQuote('Discovery Express')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 6 Retro Creativa -->
+        <article class="card">
+          <div class="tag">Mejora Continua</div>
+          <h3>Retrospectiva Creativa</h3>
+          <p class="lead">Dinámicas innovadoras para desbloquear mejoras.</p>
+          <ul class="list">
+            <li>Retro facilitada (2h) + plan de acción.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill"># acciones implementadas</span>
+            <span class="pill">Satisfacción del equipo</span>
+            <span class="pill">Problemas recurrentes ↓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">250 USD / sesión</span>
+            <button class="cta-btn" onclick="addToQuote('Retrospectiva Creativa')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 7 Agile Metrics Pack -->
+        <article class="card">
+          <div class="tag">Métricas</div>
+          <h3>Agile Metrics Pack</h3>
+          <p class="lead">Implementación de métricas ágiles y dashboard digital.</p>
+          <ul class="list">
+            <li>Lead/Cycle Time, Throughput, Predictibilidad.</li>
+            <li>Tablero digital (BI / Data Studio / Jira).</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Adopción de métricas</span>
+            <span class="pill">Defectos ↓</span>
+            <span class="pill">Transparencia ↑</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">1.000 USD / setup</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Metrics Pack')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 8 Leadership Coaching -->
+        <article class="card">
+          <div class="tag">Liderazgo</div>
+          <h3>Agile Leadership Coaching</h3>
+          <p class="lead">Coaching ejecutivo en liderazgo ágil (1:1).</p>
+          <ul class="list">
+            <li>Plan personal, delegación, feedback 360°.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Delegación efectiva</span>
+            <span class="pill">Iniciativas alineadas</span>
+            <span class="pill">Feedback 360°</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">400 USD / mes</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Leadership Coaching')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 9 Team Kick-Off -->
+        <article class="card">
+          <div class="tag">Equipos</div>
+          <h3>Team Kick-Off</h3>
+          <p class="lead">Creación de equipos de alto rendimiento desde el inicio.</p>
+          <ul class="list">
+            <li>Team Charter, acuerdos, backlog inicial.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Claridad de roles</span>
+            <span class="pill">Velocidad inicial</span>
+            <span class="pill">Engagement</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">700 USD / equipo</span>
+            <button class="cta-btn" onclick="addToQuote('Team Kick-Off')">Cotizar</button>
+          </div>
+        </article>
+
+        <!-- 10 Tools Setup -->
+        <article class="card">
+          <div class="tag">Herramientas</div>
+          <h3>Agile Tools Setup</h3>
+          <p class="lead">Configuración de Jira, Trello o ADO + capacitación.</p>
+          <ul class="list">
+            <li>Tableros, flujos, permisos y buenas prácticas.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Adopción de usuarios</span>
+            <span class="pill">Trabajo fuera del tablero ↓</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">500 USD / herramienta</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Tools Setup')">Cotizar</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAMAS -->
+  <section id="programas" class="section fade-in" style="animation-delay:.25s">
+    <div class="container">
+      <h2>Programas por Nivel de Madurez</h2>
+      <p class="lead">Evoluciona desde principiante hasta un escalado ágil organizacional.</p>
+
+      <div class="grid cols-3">
+        <!-- Starter -->
+        <article class="card">
+          <div class="badge warn">Nivel Principiante</div>
+          <h3>Agile Starter Pack</h3>
+          <p class="lead">Para empresas que recién comienzan.</p>
+          <ul class="list">
+            <li>Taller introductorio + Team Charter.</li>
+            <li>Backlog inicial + Sprint piloto completo.</li>
+            <li>Retrospectiva final y roadmap.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Roles claros</span>
+            <span class="pill">Satisfacción equipo</span>
+            <span class="pill">Efectividad de ceremonias</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">4.000–6.000 USD / equipo</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Starter Pack')">Cotizar</button>
+          </div>
+          <div class="pill" style="margin-top:10px">Duración: 4–6 semanas</div>
+        </article>
+
+        <!-- Growth -->
+        <article class="card">
+          <div class="badge ok">Nivel Intermedio</div>
+          <h3>Agile Growth Pack</h3>
+          <p class="lead">Consolidación y primeros pasos de escalado.</p>
+          <ul class="list">
+            <li>Assessment de madurez + VSM.</li>
+            <li>OKRs + coaching PO + métricas + dashboard.</li>
+            <li>2 meses de acompañamiento en sprints.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Lead/Cycle Time ↓</span>
+            <span class="pill">Predictibilidad ↑</span>
+            <span class="pill">Alineación con OKRs</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">9.000–12.000 USD / 3 meses</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Growth Pack')">Cotizar</button>
+          </div>
+          <div class="pill" style="margin-top:10px">Duración: 2–3 meses</div>
+        </article>
+
+        <!-- Scale -->
+        <article class="card">
+          <div class="badge" style="background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.4);color:#6366f1">Nivel Avanzado</div>
+          <h3>Agile Scale Pack</h3>
+          <p class="lead">Escalado ágil organizacional.</p>
+          <ul class="list">
+            <li>Framework de escalado (SAFe/LeSS/Spotify) + PI Planning.</li>
+            <li>Coaching de líderes + Comunidades de práctica.</li>
+            <li>Métricas organizacionales + Portfolio Kanban.</li>
+          </ul>
+          <div class="kpis">
+            <span class="pill">Dependencias gestionadas</span>
+            <span class="pill">NPS/CSAT ↑</span>
+            <span class="pill">Velocidad inter-equipos ↑</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px">
+            <span class="price">20.000–30.000 USD / 6 meses</span>
+            <button class="cta-btn" onclick="addToQuote('Agile Scale Pack')">Cotizar</button>
+          </div>
+          <div class="pill" style="margin-top:10px">Duración: 6 meses</div>
+        </article>
+      </div>
+
+      <!-- Tabla resumen -->
+      <div style="margin-top:24px">
+        <table>
+          <thead>
+            <tr>
+              <th>Nivel</th>
+              <th>Enfoque</th>
+              <th>Entregables</th>
+              <th>Indicadores</th>
+              <th>Precio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><b>Principiante</b></td>
+              <td>Iniciar con un equipo ágil y Sprint piloto</td>
+              <td>Team Charter, Backlog inicial, Roadmap</td>
+              <td>Ceremonias efectivas, satisfacción equipo</td>
+              <td>4k–6k USD</td>
+            </tr>
+            <tr>
+              <td><b>Intermedio</b></td>
+              <td>Consolidar prácticas y alinear negocio</td>
+              <td>Assessment, OKRs, Dashboard, VSM</td>
+              <td>Lead Time ↓, predictibilidad ↑, OKRs</td>
+              <td>9k–12k USD</td>
+            </tr>
+            <tr>
+              <td><b>Avanzado</b></td>
+              <td>Escalar agilidad a la organización</td>
+              <td>Framework escalado, líderes formados</td>
+              <td>Dependencias ↓, NPS ↑, velocidad ↑</td>
+              <td>20k–30k USD</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDICADORES GLOBALES -->
+  <section id="indicadores" class="section alt fade-in" style="animation-delay:.3s">
+    <div class="container">
+      <h2>Indicadores Globales de Evolución en Agile</h2>
+      <p class="lead">KPIs transversales para evidenciar calidad, eficiencia y valor.</p>
+      <div class="grid cols-4">
+        <article class="card"><h3>Calidad</h3><ul class="list"><li>Defectos post-entrega</li><li>% retrabajo</li><li>Defect density</li></ul></article>
+        <article class="card"><h3>Eficiencia</h3><ul class="list"><li>Lead Time</li><li>Cycle Time</li><li>Throughput</li></ul></article>
+        <article class="card"><h3>Predictibilidad</h3><ul class="list"><li>% cumplimiento de sprint</li><li>Variación de velocidad</li><li>Cadencia de releases</li></ul></article>
+        <article class="card"><h3>Valor & Satisfacción</h3><ul class="list"><li>NPS / CSAT</li><li>Valor percibido</li><li>Uso de funcionalidades</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section fade-in" style="animation-delay:.35s">
+    <div class="container">
+      <h2>¿Listos para empezar?</h2>
+      <p class="lead">Cuéntanos qué paquete te interesa y recibe una propuesta en 24h hábiles.</p>
+      <div class="grid cols-2">
+        <!-- SUGERENCIA: Reemplaza action por tu endpoint de Formspree/Getform/Netlify -->
+        <form class="card" onsubmit="sendQuote(event)" action="#" method="post">
+          <label>Nombre<br><input required class="input" name="name" placeholder="Tu nombre" /></label>
+          <label style="margin-top:10px">Email<br><input required type="email" class="input" name="email" placeholder="tu@empresa.com" /></label>
+          <label style="margin-top:10px">Paquetes seleccionados<br><textarea class="input" name="packages" rows="3" placeholder="Ej: Sprint 360°, OKR Booster"></textarea></label>
+          <label style="margin-top:10px">Mensaje<br><textarea class="input" name="message" rows="4" placeholder="Contexto, tamaño del equipo, objetivo..."></textarea></label>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px;gap:10px;flex-wrap:wrap">
+            <small style="color:var(--muted)">También puedes escribirnos a <b>ventas@tu-dominio.com</b></small>
+            <button class="cta-btn" type="submit">Solicitar propuesta</button>
+          </div>
+        </form>
+        <div class="card">
+          <h3>Cómo funciona</h3>
+          <ol class="list">
+            <li>Eliges 1 o más paquetes o un programa por nivel.</li>
+            <li>Agendamos una llamada de 30 min de encuadre.</li>
+            <li>Recibes propuesta y cronograma.</li>
+            <li>Kick-off y ejecución con métricas desde el día 1.</li>
+          </ol>
+          <div style="margin-top:10px">
+            <span class="pill">Remoto o presencial</span>
+            <span class="pill">Idioma: ES / EN</span>
+            <span class="pill">Billing global</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot-grid">
+      <div>
+        <div class="logo"><span class="dot"></span> Catálogo Ágil</div>
+        <p style="margin:10px 0 0">© <span id="year"></span> Tu Marca. Todos los derechos reservados.</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <ul class="list">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#indicadores">Indicadores</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul class="list">
+          <li>ventas@tu-dominio.com</li>
+          <li>+00 000 000 000</li>
+          <li>LinkedIn / Web</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CTA flotante -->
+  <div class="floating-cta">
+    <span style="color:var(--muted);font-weight:800">Arma tu propuesta</span>
+    <button onclick="openContact()">Comenzar</button>
+  </div>
+
+  <!-- Toast simple -->
+  <div id="toast" style="position:fixed;left:50%;transform:translateX(-50%);bottom:24px;background:#111827;color:#e5e7eb;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);display:none">¡Gracias! Te contactaremos muy pronto.</div>
+
+  <script>
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Navegación rápida
+    function openContact(){
+      document.querySelector('#contacto').scrollIntoView({behavior:'smooth'});
+    }
+
+    function addToQuote(name){
+      const field = document.querySelector('textarea[name="packages"]');
+      const current = field.value.trim();
+      field.value = current ? current + ', ' + name : name;
+      openContact();
+    }
+
+    function sendQuote(e){
+      e.preventDefault();
+      // SUGERENCIA: integra con Formspree/Getform/Netlify Forms
+      e.target.reset();
+      showToast('¡Gracias! Te contactaremos muy pronto.');
+    }
+
+    function showToast(msg){
+      const toast = document.getElementById('toast');
+      toast.textContent = msg; toast.style.display = 'block';
+      setTimeout(()=> toast.style.display = 'none', 3000);
+    }
+
+    // Tema claro/oscuro con persistencia
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeBtn');
+    const themeText = document.getElementById('themeText');
+    const savedTheme = localStorage.getItem('theme');
+    if(savedTheme){ root.setAttribute('data-theme', savedTheme); themeText.textContent = savedTheme === 'dark' ? 'Oscuro' : 'Claro'; themeBtn.firstElementChild.textContent = savedTheme === 'dark' ? '🌙' : '☀️'; }
+    themeBtn.addEventListener('click', ()=>{
+      const current = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', current);
+      localStorage.setItem('theme', current);
+      themeText.textContent = current === 'dark' ? 'Oscuro' : 'Claro';
+      themeBtn.firstElementChild.textContent = current === 'dark' ? '🌙' : '☀️';
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', current==='dark'?'#0b1020':'#ffffff');
+    });
+  </script>
+
+  <!--
+  ==============================
+  📦 Despliegue en GitHub Pages
+  ==============================
+  1) Crea un repositorio (p.ej., catalogo-agil) y añade este archivo como index.html en la raíz.
+  2) Commit & push.
+  3) En Settings → Pages, Source: "Deploy from a branch". Branch: main, Folder: /root.
+  4) Guarda. Tu sitio quedará disponible en: https://<tu-usuario>.github.io/<repo>/
+
+  Extra:
+  - Cambia ventas@tu-dominio.com y el teléfono en el pie.
+  - Reemplaza el action del formulario por tu endpoint real (Formspree/Getform/Netlify Forms).
+  - Actualiza Open Graph (og:image) con una imagen propia.
+  - Personaliza colores en :root (—brand, —brand-2).
+  -->
+</body>
+</html>
